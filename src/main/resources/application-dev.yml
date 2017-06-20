@@ -1,0 +1,18 @@
+#server port
+server:
+  context-path: /
+  port: 8899
+
+#log config
+logging:
+  level:
+    root: INFO
+    sample.mybatis.mapper: TRACE
+    org.springframework.web.method.annotation: DEBUG
+    com.yx.statistics: DEBUG
+
+
+
+
+
+

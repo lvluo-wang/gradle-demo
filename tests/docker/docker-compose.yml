@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  api:
+    image: registry.lvjin.work/java
+    container_name: gradle-demo
+    volumes:
+      - ./log:/docker/log
+      - ./var/api-run.sh:/docker/var/etc/service/app/run.sh
+      - ./lib/gradle-demo-0.1.0.jar:/app.jar
+    ports:
+      - "8899:8899"
+    networks:
+      - "zuo_net"
+    #command: "java -jar app.jar"
+    #environment:
+     #  - DINIT_RUN=sh docker/var/etc/service/app/run.sh
+    entrypoint:  docker/var/etc/service/app/run.sh
+networks:
+  zuo_net:
+    driver: bridge
